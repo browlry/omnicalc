@@ -1,4 +1,4 @@
-; Omnicalc v1.261
+; Omnicalc v1.27
 ; (C) 2002-2005 Michael Vincent.
 ;	Modified in 2025 by Benjamin Allred to remap Up Arrow key to [Entry] on home screen (so it behaves more like a command prompt or shell)
 ;
