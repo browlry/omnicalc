@@ -1,0 +1,45 @@
+List of updates:
+
+v1.2
+custom menu now works on the 84+
+sprite() now shouldn't crash
+the custom menu now handles an archived appvar correctly
+play() function added
+functions now are real() - no more tokens
+On+0 shows the token when the cursor is over a real() token
+factor() function improved
+simp() function improved
+parentheses assistant improved
+parentheses assistant handles " nPr ", strings, et cetera
+entries menu pasting improved (for scrolling the homescreen)
+log() function now supports log(number,base) as well
+ExecAsm() function added
+compression added
+lite8x
+the omnicalc appvar can now be archived
+quick apps menu added with finance hiding feature
+when changing bases, the new base is briefly displayed
+base conversion now works up to (2^32)-1
+(v1.24) fixed a bug that prevented log(-n) from working when in a+bi mode.
+(v1.24) fixed the fast apps routine; in some cases it was detecting archived junk
+(v1.24) hooks from other apps are now overwritten properly
+(v1.24) problem with invalid numeric keys being pressed in the functions menu fixed
+(v1.24) fixed a problem with running apps where the fast apps menu had been called from in a menu routine
+(v1.25) fixed a problem with pressing an alpha key in the fast apps menu sometimes
+(v1.25) fixed a problem with pressing an invalid numeric key in the functions menu
+(v1.25) fixed restoremem() which somehow broke in 1.24
+(v1.26) fixed a problem with simp() and fixed format settings
+(v1.26) sprite() can now display full-screen sprites
+(v1.26) simp() now returns sqrt(2) as a string, for consistency
+(v1.26) pressing On+Apps does not work in a Rcl prompt now
+(v1.26) long entries no longer crash the entry menu
+(v1.26) more apps menu display problems fixed
+
+v1.1
+
+Virtual Calc switching made faster
+Clipboard functionality removed
+bug where the seventh entry in the entries menu would change to a up arrow after scrolling past it, only if 7 entries, fixed.
+custom menu - if the appvar is archived it will now attempt to unarchive it first when accessing
+pressing the muliply key in the extra tokens menu will insert a friendly version
+division by zero in mod() handled

@@ -1,0 +1,47 @@
+LICENSE FOR OMNICALC
+
+(C) 2005, by Michael Vincent. All rights reserved. This license may be freely distributed as necessary, and only when necessary, to accompany the distribution of Omnicalc or its source code.
+
+TERMS AND CONDITIONS:
+
+1. This license applies to the calculator program Omnicalc and any derivative works of Omnicalc, where a derivative work is a work containing Omnicalc or a portion of it, either verbatim or modified/translated into another language. Below, "Program" refers to either Omnicalc or any derivatives based upon Omnicalc. Each licensee is refered to as "you."
+
+2. You may copy and distribute verabatim copies of the Program's source code and binary package as you received it, in any medium, as long as you publish the appropriate copyright notice and disclaimer of warranty on each copy. You may not remove any notices in the Program's source code that refer to this license or to any legal matters. A copy of this license must be provided along with the Program.
+
+3. You have the right to modify copies of the Program or any portion of it. Your work formed based on the Program may be distributed under the terms of the first section of this license, so long as you meet the following conditions:
+
+	a. The modified files must carry notices stating the date, nature, and author of any changes.
+	b. Any work that is distributed and that contains any part of this Program must be licensed under the terms of this license.
+
+If your work contains sizeable sections that are not derived from the Program, then the terms of this license only apply to the sections of your work and not to the work as a whole.
+
+4. You have the right to copy and distribute the Program or a derivative work in executable form provided that you comply with the following rules:
+
+	a. If the Program's distribution medium consists of a non-graphing calculator-based medium, including but not limited to, the internet, floppy disks, CD-ROMs, DVDs, LANs, or file sharing, then you must include the complete source code distributed under section 3 of this license.
+	b. If the Program is being distributed solely in executable form between two Texas Instruments graphing calculators, the program may be distributed without corresponding source code if you supply the source code upon the request of the receiving party.
+
+5. You cannot use or perform any operations with the Program except as specified in this license. If you copy, modify, or distribute the Program under any other license or with restrictions not specified in this license, this license becomes void.
+
+6. Employees of Texas Instruments, Incorporated, may not view the source code for the Program in either its original form or in a derivative work unless they have sent an e-mail to michael@detachedsolutions.com containing at least one piece of information about the TI-83 Plus graphing calculator that has been previously unknown to the general public. "Information" means knowledge that is capable of contributing significantly to program development on the TI-83 Plus, including but not limited to, a description of a system call, documentation on memory addresses, hardware operation, et cetera. It is the sole responsibility of the TI employee to ensure that said information does not violate any prior non-disclosure agreements with Texas Instruments.
+
+WARRANTY
+
+BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
+FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN
+OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
+PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
+OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS
+TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE
+PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,
+REPAIR OR CORRECTION.
+
+IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
+REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,
+INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING
+OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED
+TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY
+YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER
+PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES.
