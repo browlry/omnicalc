@@ -1,4 +1,4 @@
-;Omnicalc v1.26.1
+;Omnicalc v1.27
 ; (C) 2002-2005 Michael Vincent.
 ; Modified 2025 by Benjamin Allred to remap Up Arrow to [Entry] on home screen
 ;
