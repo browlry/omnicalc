@@ -1,5 +1,6 @@
-;Omnicalc v1.26
+;Omnicalc v1.26.1
 ; (C) 2002-2005 Michael Vincent.
+; Modified 2025 by Benjamin Allred to remap Up Arrow to [Entry] on home screen
 ;
 ;	This program is free software; you can redistribute it and/or modify
 ;	it under the terms of the Omnicalc license included with this source code.
@@ -211,10 +212,11 @@ Adjust_Screen_1:
 	DB "Base  Conversion",0
 	DB "Lowercase  Letters",0
 Adjust_Screen_2:
-	DB 3
+	DB 4
 	DB "Thousands  Separators",0
 	DB "Quick  APPS  (SE  only)",0
 	DB 6,6,"Hide  Finance  app",0
+	DB "UpKeyPastesPrevEntry",0
 FontSets:
 	xor a
 	ld (numsets),a

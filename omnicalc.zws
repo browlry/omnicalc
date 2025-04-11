@@ -30,7 +30,7 @@ NAME = Not Available
 
 [PRJ PATH]
 #begin
-PATH = c:\temp\omnicalcsource\
+PATH = c:\programmes\calculators\omnicalcsource\
 #end
 
 [FILES]

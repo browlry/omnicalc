@@ -54,12 +54,12 @@ MirageOS:
 Hook_Key_Apps_AppsReturn:
 	call GetRealSettings
 	inc hl
-	bit 2,(hl)
-	jp z,Hook_Key_Apps_Return
-	set 3,(iy+asm_Flag1)
-	bit 3,(hl)
-	jr z,$F
-	res 3,(iy+asm_Flag1)
+	bit 2,(hl) ; is Quick Apps box checked? If bit 2 in settings byte is 0, then set z flag to 1
+	jp z,Hook_Key_Apps_Return ; if not, then exit (if z flag is set, then setting is off)
+	set 3,(iy+asm_Flag1)  ; if so, then do this stuff
+	bit 3,(hl) ; is Hide Finance app checked?
+	jr z,$F   ; if not, jump to $F
+	res 3,(iy+asm_Flag1) ; otherwise, do this thing.
 $$:
  INCLUDE "appsmenu.asm"
 Hook_Key_Apps_Return:

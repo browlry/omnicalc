@@ -1,5 +1,6 @@
-; Omnicalc v1.26
+; Omnicalc v1.261
 ; (C) 2002-2005 Michael Vincent.
+;	Modified in 2025 by Benjamin Allred to remap Up Arrow key to [Entry] on home screen (so it behaves more like a command prompt or shell)
 ;
 ;	This program is free software; you can redistribute it and/or modify
 ;	it under the terms of the Omnicalc license included with this source code.
@@ -16,29 +17,31 @@ cxMain_Hook:
 	jp z,cxMain_BackupRAM
 	cp 1
 	jp nz,cxMain_Exit
-	ld a,b
-	cp kClear
-	jp z,cxMain_Clear
-	cp 86h	;right parenthesis
-	jp nz,cxMain_Exit
+	ld a,b		;load keycode of the key that was pressed b into the accumulator a
+	cp kUp ;003h 	; check if up arrow was pressed; if so, 1 is stored as z (because a - 003h = 0, so the zero flag z is set to 1)
+	jp z,cxMain_Up_Arrow ; if z is 1, run the cxMain_Up_Arrow function
+	cp kClear 	; compare A register with the keycode for [Clear]
+	jp z,cxMain_Clear  ; if it matches, call the "clear" function
+	cp 86h		;check if right parenthesis was pressed
+	jp nz,cxMain_Exit ; if not, then exit
 	push bc
-	call GetRealSettings
-	bit 1,(hl)
-	ld a,1
-	jp z,cxMain_Exit2
+	call GetRealSettings ; load settings address into h1
+	bit 1,(hl) ; check bit one of the settings byte (located at the address in h1) to see if Parentheses Assistant is turned on; if it's zero, set the z flag.
+	ld a,1 ; load one into the accumulator
+	jp z,cxMain_Exit2 ; if bit 1 of the settings bit is off, then exit (z flag on means the setting is off)
 	push af
 	B_CALL RunIndicOff
 	pop af
 	res evilQuotes,(iy+parens)
 	ld c,a
 	ld hl,(editCursor)
-	ld a,(currow)
+	ld a,(currow) ; load the cursor row into the accumulator
 	add a,a
 	add a,a
 	add a,a
 	add a,a
 	ld b,a
-	ld a,(curcol)
+	ld a,(curcol) ; load the cursor column into the accumulator
 	add a,b
 	ld d,0
 	ld e,a
@@ -169,6 +172,24 @@ cxMain_Search_Quote:
 	xor 1
 	ld (iy+parens),a
 	ret
+cxMain_Up_Arrow:
+	push bc ; add the bc register to the stack (in case it gets changed by GetRealSettings)
+	call GetRealSettings ; check the settings and load their *location* into hl (High Low register)
+	pop bc ; pop the bc register from the stack
+	inc hl ; add 1 to the address stored in hl (so it refers to the next byte?)
+	bit 4,(hl) ; check bit 4 of the settings byte ; if it's off (zero), then the zero flag (z) is set to 1.
+	jr z,cxMain_Up_Arrow_Exit ; if the setting is off (zero flag is not set), then jump to cxMain_Up_Arrow_Exit
+;	jr nz,cxMain_Last_Entry ; if the setting is on (zero flat is set), then jump to cxMain_Last_Entry
+;cxMain_Last_Entry:
+	ld b,kLastEnt 	; load kLastEnt [Entry] 00Dh key into b register (i.e. return Entry instead of Up arrow)
+	ld a,1 ; i don't know what these two lines do. I just copied them from cxMain_Clear_Exit
+	cp a
+	ret
+cxMain_Up_Arrow_Exit:
+	ld b,kUp ; load the up arrow key into the b register, so the up arrow key works as it normally does
+	ld a,1 ; i don't know what these two lines do. I just copied them from cxMain_Clear_Exit
+	cp a
+	ret
 cxMain_Clear:
 	;89-like Clear functionality
 	ld hl,(editBtm)
@@ -194,15 +215,15 @@ cxMain_Clear_Exit:
 	cp a
 	ret
 cxMain_BackupRAM:
-	ld a,b
-	cp 40h
-	jr nz,cxMain_Exit3
+	ld a,b ; load the keypress b into the accumulator a
+	cp 40h ; compare the accumulator a to 40h kQuit (If a - 40h = 0, set zero flag z to 1)
+	jr nz,cxMain_Exit3 ; if the zero flag is not set (z != 0 because a - 40h != 0 because the key pressed was not Quit), then just exit
 	in a,(2)
 	rla
 	jr nc,cxMain_Exit3
 	call GetRealSettings
-	bit 4,(hl)
-	jr z,cxMain_Exit3
+	bit 4,(hl) ; check if "Ram Recovery" setting is on; if it's off, then set the z flag
+	jr z,cxMain_Exit3 ; if the setting is off (z is set), then exit
 	;Calculator turning off, let's backup RAM.
 	di
 	ld a,1
@@ -395,8 +416,8 @@ cxMain_BaseDisplay_NotSpecial:
 	ld hl,appbackupscreen
 	rst 20h
 	pop hl
-	bit 6,(hl)
-	jp z,cxMain_Thousands
+	bit 6,(hl) ; check if bit 6 (the Base Conversion setting) is on. If it's zero, set the z flag.
+	jp z,cxMain_Thousands ; if z flag is on (because the base conversion setting is off), jump to cxMain_Thousands
 	inc hl
 	inc hl
 	ld a,(hl)

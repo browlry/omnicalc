@@ -1,5 +1,6 @@
-; Omnicalc v1.26
+; Omnicalc v1.26.1
 ; (C) 2002-2005 Michael Vincent.
+;  Modified in 2025 by Benjamin Allred (to remap up arrow key to [Entry])
 ;
 ;	This program is free software; you can redistribute it and/or modify
 ;	it under the terms of the Omnicalc license included with this source code.
@@ -9,14 +10,14 @@
 ;	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ;
 
-; Omnicalc v1.2
+; Omnicalc v1.2.1
 ; Michael Vincent - michael@detachedsolutions.com
 ;
 ; Copyright (C) 2001-2005, by Michael Vincent. All rights reserved.
 ; Developed for Detached Solutions - www.detachedsolutions.com
 ; Project started 6-06-01.
 ; Rewrite started 12-21-01.
-;
+; Fork started 2025-04-01
 ;
  NOLIST
  INCLUDE "ti83plus.inc"
@@ -355,7 +356,7 @@ YesNo:
 DisableHooks:
 	res GetcscHook,(iy+Hooks1)		;RawKeyHook
 	res ParserHook,(iy+Hooks3)		;Parser hook
-	res cxMainHook,(iy+Hooks1)		;cxMain hook
+	res cxMainHook,(iy+Hooks1)		;cxMain hook (aka Homescreen hook)
 	res GetKeyHook,(iy+Hooks1)		;GetKeyHook
 	res FontHook,(iy+Hooks2)		;Font hook
 	res TokenHook,(iy+Hooks2)		;Token hook
@@ -384,7 +385,7 @@ DisplayMessageBox:
 GetRealSettings_Routine:
 	ld hl,Appvar
 	rst 20h
-	B_CALL ChkFindSym
+	B_CALL ChkFindSym ; find the app var with 20h?
 	ld a,b
 	ret
 GetRealSettings_Unarchive:
@@ -744,7 +745,7 @@ Splash_Moving_Strings:
 	INCLUDE "hooks.asm"
 	INCLUDE "compression.asm"
 Intro_Version:
-	DB "Version 1.26",0
+	DB "Version 1.26.1",0
 CompareStrings:
 	;HL, DE strings for B bytes
 	;There is an undocumented B_CALL but this is ~2000 cycles faster
