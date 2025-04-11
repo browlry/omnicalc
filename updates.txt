@@ -1,6 +1,6 @@
 List of updates:
 
-v1.3 (2025 April 11)
+v1.27 (2025 April 11)
 Added "UpKeyPastesPrevEntry" to the settings menu
 When this setting is on, pressing the [Up] arrow key on the home screen will return [Entry] instead, allowing you to quickly scroll through your previous entries, similar to how the up arrow key behaves at a command prompt.
 
