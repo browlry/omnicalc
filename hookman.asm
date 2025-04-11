@@ -1,4 +1,4 @@
-; Omnicalc v1.26.1
+; Omnicalc v1.27
 ; (C) 2002-2005 Michael Vincent.
 ;  Modified in 2025 by Benjamin Allred (to remap up arrow key to [Entry])
 ;
@@ -10,7 +10,7 @@
 ;	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ;
 
-; Omnicalc v1.2.1
+; Omnicalc v1.27
 ; Michael Vincent - michael@detachedsolutions.com
 ;
 ; Copyright (C) 2001-2005, by Michael Vincent. All rights reserved.
@@ -745,7 +745,7 @@ Splash_Moving_Strings:
 	INCLUDE "hooks.asm"
 	INCLUDE "compression.asm"
 Intro_Version:
-	DB "Version 1.26.1",0
+	DB "Version 1.27",0
 CompareStrings:
 	;HL, DE strings for B bytes
 	;There is an undocumented B_CALL but this is ~2000 cycles faster
