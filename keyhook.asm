@@ -1,4 +1,4 @@
-; Omnicalc v1.26
+; Omnicalc v1.27
 ; (C) 2002-2005 Michael Vincent.
 ;
 ;	This program is free software; you can redistribute it and/or modify
