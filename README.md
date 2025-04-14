@@ -2,9 +2,9 @@
 
 I'm a high school math teacher with an irrational attachment to our old TI-83 Plus graphing calculators.
 
-Our students have a hard time with the learning curve on the 83+ (even when just using the calculator for simple arithmetic), but much less difficulty with the TI-84+. This appears to be because the TI-84+ lets you scroll up the home screen using the up arrow, while the TI-83+ only has `[2nd]` `[Entry]` to view previous entries.
+Our students have a hard time with the learning curve on the 83+ (even when just using the calculator for simple arithmetic), but much less difficulty with the TI-84+. This appears to be because the TI-84+ lets you scroll up the home screen using the up arrow, while the TI-83+ only has `[2nd][Entry]` to view previous entries.
 
-I already install Omnicalc on these calculators (I like the thousands separators and parentheses assistant). Since Omnicalc already re-maps some keys (like re-directing `[Entry]` to its Entries menu), I thought it would be a fun project to see if I can modify Omnicalc to re-map the Up arrow to `[Entry]`. This would make the button more like the up arrow in Bash or Powershell. 
+I already install Omnicalc on these calculators (I like the thousands separators and parentheses assistant). Since Omnicalc already re-maps some keys (like re-directing `[Entry]` to its Entries menu), I tweaked the code to re-map the Up arrow to `[Entry]` on the Home screen. This makes the key behave more like the up arrow in Bash or Powershell.
 
 ## Credits
 
@@ -15,6 +15,8 @@ https://detachedsolutions.com/omnicalc/
 
 The original Omnicalc users manual may be viewed here:
 https://detachedsolutions.com/omnicalc/manual/
+
+Special thanks to [tr1p1ea](https://www.cemetech.net/users/tr1p1ea) for demonstrating that this is possible, and the community at [Cemetech](https://www.cemetech.net/forum/viewtopic.php?p=309234) for their support.
 
 ## Building
 
